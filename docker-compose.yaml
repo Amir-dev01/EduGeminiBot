@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  edubot:
+    build: .
+    container_name: edubot-container
+    command: python main.py
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
